@@ -26,6 +26,23 @@ Nunc sed id semper risus in hendrerit gravida rutrum. Nam libero justo laoreet
 sit amet cursus sit amet. In fermentum et sollicitudin ac orci phasellus egestas
 tellus. ~Dignissim~ sodales ut eu sem.
 
+- This
+- is
+- an
+    - unordered
+- list
+
+1. This
+1. is
+1. an
+    1. ordered
+1. list
+
+| Foo   | Bar | Baz      |
+|-------|-----|----------|
+| This  | is  | a        |
+| table | in  | markdown |
+
 ### Foo
 
 Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices.
@@ -78,6 +95,25 @@ interdum velit laoreet id donec. Imperdiet massa tincidunt nunc pulvinar sapien
 et. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci.
 Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Sit
 amet nisl purus in mollis.
+
+::: warning Be warned!
+This is a warning callout
+:::
+
+::: note Note
+This is a note
+:::
+
+::: experimental Stage-1
+### Keyword
+
+This describes an experimental keyword. Whole sections can go inside a callout,
+so we can use it for experimental features.
+
+#### Sub-section
+
+Nested sections too.
+:::
 
 ### Baz
 Vulputate enim nulla aliquet porttitor. Phasellus vestibulum lorem sed risus
