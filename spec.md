@@ -3,6 +3,7 @@
 ## Table of Contents
 
 ## Introduction
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -11,6 +12,7 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
 ## First
+
 iQuis varius quam quisque id diam vel quam elementum. Aliquam ultrices sagittis
 orci a scelerisque. Gravida dictum fusce ut placerat orci nulla pellentesque.
 Metus vulputate eu scelerisque felis. Enim nulla aliquet porttitor lacus luctus
@@ -68,7 +70,7 @@ Nisl purus in mollis nunc sed id semper risus in. Est pellentesque elit
 ullamcorper dignissim cras tincidunt. Malesuada nunc vel risus commodo viverra
 maecenas accumsan.
 
-### Code Titles
+### Code Titles {#code-titles}
 
 Schema without title
 
@@ -148,6 +150,7 @@ const foo = function () => {
 ```
 
 ### Bar
+
 Vulputate enim nulla aliquet porttitor. Phasellus vestibulum lorem sed risus
 ultricies tristique nulla aliquet. Dui id ornare arcu odio ut sem nulla. Posuere
 ac ut consequat semper viverra. Erat imperdiet sed euismod nisi porta lorem
@@ -160,6 +163,7 @@ vehicula ipsum a arcu cursus vitae congue mauris. Rhoncus est pellentesque elit
 ullamcorper dignissim cras tincidunt lobortis.
 
 ## Second
+
 Amet massa vitae tortor condimentum lacinia. Molestie a iaculis at erat
 pellentesque. Nibh tortor id aliquet lectus proin nibh. Viverra maecenas
 accumsan lacus vel facilisis volutpat est velit. Ipsum dolor sit amet
@@ -195,7 +199,12 @@ so we can use it for experimental features.
 Nested sections too.
 :::
 
+## References
+
+See examples of code titles in {{code-titles}}.
+
 ### Baz
+
 Vulputate enim nulla aliquet porttitor. Phasellus vestibulum lorem sed risus
 ultricies tristique nulla aliquet. Dui id ornare arcu odio ut sem nulla. Posuere
 ac ut consequat semper viverra. Erat imperdiet sed euismod nisi porta lorem
@@ -208,6 +217,7 @@ vehicula ipsum a arcu cursus vitae congue mauris. Rhoncus est pellentesque elit
 ullamcorper dignissim cras tincidunt lobortis.
 
 #### Nested
+
 Amet massa vitae tortor condimentum lacinia. Molestie a iaculis at erat
 pellentesque. Nibh tortor id aliquet lectus proin nibh. Viverra maecenas
 accumsan lacus vel facilisis volutpat est velit. Ipsum dolor sit amet
@@ -223,6 +233,7 @@ Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Sit
 amet nisl purus in mollis.
 
 ##### Nested More
+
 iQuis varius quam quisque id diam vel quam elementum. Aliquam ultrices sagittis
 orci a scelerisque. Gravida dictum fusce ut placerat orci nulla pellentesque.
 Metus vulputate eu scelerisque felis. Enim nulla aliquet porttitor lacus luctus
