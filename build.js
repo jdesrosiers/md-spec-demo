@@ -1,18 +1,18 @@
-/* eslint-disable no-console */
 import dotenv from "dotenv";
 import { readFileSync, writeFileSync } from "node:fs";
 import { reporter } from "vfile-reporter";
 import { remark } from "remark";
-import remarkPresetLintMarkdownStyleGuide from "remark-preset-lint-markdown-style-guide";
-import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
-import torchLight from "remark-torchlight";
-import remarkRehype from "remark-rehype";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeStringify from "rehype-stringify";
-import remarkNumberHeadings from "./remark-number-headings.js";
 import remarkFlexibleContainers from "remark-flexible-containers";
+import remarkGfm from "remark-gfm";
+import remarkHeadingId from "remark-heading-id";
+import remarkHeadings from "./remark-headings.js";
+import remarkPresetLintMarkdownStyleGuide from "remark-preset-lint-markdown-style-guide";
+import remarkRehype from "remark-rehype";
+import remarkReferenceLinks from "./remark-reference-links.js";
+import remarkTableOfContents from "./remark-table-of-contents.js";
+import remarkTorchLight from "remark-torchlight";
+import remarkValidateLinks from "remark-validate-links";
+import rehypeStringify from "rehype-stringify";
 
 
 dotenv.config();
@@ -22,13 +22,14 @@ dotenv.config();
   const html = await remark()
     .use(remarkPresetLintMarkdownStyleGuide)
     .use(remarkGfm)
-    .use(remarkNumberHeadings, { startDepth: 2, skip: ["Contents"] })
-    .use(remarkToc, { tight: true, heading: "Contents" })
-    .use(torchLight)
+    .use(remarkHeadingId)
+    .use(remarkHeadings, { startDepth: 2, skip: ["Table of Contents"] })
+    .use(remarkReferenceLinks)
     .use(remarkFlexibleContainers)
+    .use(remarkTorchLight)
+    .use(remarkTableOfContents, { startDepth: 2 })
+    .use(remarkValidateLinks)
     .use(remarkRehype)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, { behavior: "wrap" })
     .use(rehypeStringify)
     .process(md);
 
@@ -36,7 +37,6 @@ dotenv.config();
 <html>
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>
       svg {

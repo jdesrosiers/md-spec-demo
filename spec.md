@@ -1,6 +1,6 @@
 # JSON Schema
 
-## Contents
+## Table of Contents
 
 ## Introduction
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
