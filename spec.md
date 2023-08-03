@@ -60,7 +60,36 @@ Nisl purus in mollis nunc sed id semper risus in. Est pellentesque elit
 ullamcorper dignissim cras tincidunt. Malesuada nunc vel risus commodo viverra
 maecenas accumsan.
 
+JSON without title
+
 ```json
+{
+  "foo": 42
+}
+```
+
+JSON with title
+
+```json "Foo 42"
+{
+  "foo": 42
+}
+```
+
+Schema without title
+
+```jsonschema
+{
+  "type": "object",
+  "properties": {
+    "foo": { "type": "string" } // [tl! highlight]
+  }
+}
+```
+
+Schema with title
+
+```jsonschema "A schema with a title"
 {
   "type": "object",
   "properties": {
