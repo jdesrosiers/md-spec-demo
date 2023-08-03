@@ -57,7 +57,6 @@ dotenv.config();
         min-width: -webkit-max-content;
         min-width: -moz-max-content;
         min-width: max-content;
-        padding-top: 1rem;
         border-radius: 0.5rem;
       }
 
@@ -82,7 +81,7 @@ dotenv.config();
         height: 1.25rem;
         border-radius: 0.5rem 0.5rem 0 0;
         position: relative;
-        top: 0.75rem;
+        top: 0.5rem;
         background-color: var(--background-alt);
         padding: 0.5rem 0.5rem 0.5rem 2.5rem;
         background-repeat: no-repeat;
