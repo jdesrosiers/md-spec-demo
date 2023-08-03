@@ -2,7 +2,9 @@ import { visit } from "unist-util-visit";
 import { text } from "mdast-builder";
 
 
-const titlePattern = /^"(?<title>.*?)"/;
+const hexdig = `[0-9a-fA-F]`;
+const char = `(?:\\\\["\\/\\\\brfnt]|\\\\u${hexdig}{4}|[^"\\\\])`;
+const jsonStringPattern = new RegExp(`^"${char}*"`);
 
 const remarkNumberHeadings = () => (tree) => {
   visit(tree, "code", (codeNode, index, parent) => {
@@ -28,9 +30,10 @@ const remarkNumberHeadings = () => (tree) => {
     }
 
     if ("meta" in codeNode) {
-      const match = titlePattern.exec(codeNode.meta);
+      const match = jsonStringPattern.exec(codeNode.meta);
       if (match) {
-        title = title ? `${title} - ${match.groups.title}` : match.groups.title;
+        const customTitle = JSON.parse(match[0]);
+        title = title ? `${title} - ${customTitle}` : customTitle;
         codeNode.meta = codeNode.meta.slice(match[0].length).trim();
       }
     }

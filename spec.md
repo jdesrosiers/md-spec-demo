@@ -26,17 +26,25 @@ Nunc sed id semper risus in hendrerit gravida rutrum. Nam libero justo laoreet
 sit amet cursus sit amet. In fermentum et sollicitudin ac orci phasellus egestas
 tellus. ~Dignissim~ sodales ut eu sem.
 
+## Random Syntax Examples
+
+Unordered list
+
 - This
 - is
 - an
     - unordered
 - list
 
+Ordered list
+
 1. This
 1. is
 1. an
     1. ordered
 1. list
+
+Table
 
 | Foo   | Bar | Baz      |
 |-------|-----|----------|
@@ -60,6 +68,8 @@ Nisl purus in mollis nunc sed id semper risus in. Est pellentesque elit
 ullamcorper dignissim cras tincidunt. Malesuada nunc vel risus commodo viverra
 maecenas accumsan.
 
+### Code Titles
+
 Schema without title
 
 ```jsonschema
@@ -74,6 +84,17 @@ Schema without title
 Schema with title
 
 ```jsonschema "A schema with a title"
+{
+  "type": "object",
+  "properties": {
+    "foo": { "type": "string" } // [tl! highlight]
+  }
+}
+```
+
+Schema with title with escaped `"`
+
+```jsonschema "A schema with a \\"title\\""
 {
   "type": "object",
   "properties": {
@@ -152,6 +173,8 @@ interdum velit laoreet id donec. Imperdiet massa tincidunt nunc pulvinar sapien
 et. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci.
 Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Sit
 amet nisl purus in mollis.
+
+## Callouts
 
 ::: warning Be warned!
 This is a warning callout
