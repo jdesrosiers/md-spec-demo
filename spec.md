@@ -60,22 +60,6 @@ Nisl purus in mollis nunc sed id semper risus in. Est pellentesque elit
 ullamcorper dignissim cras tincidunt. Malesuada nunc vel risus commodo viverra
 maecenas accumsan.
 
-JSON without title
-
-```json
-{
-  "foo": 42
-}
-```
-
-JSON with title
-
-```json "Foo 42"
-{
-  "foo": 42
-}
-```
-
 Schema without title
 
 ```jsonschema
@@ -95,6 +79,50 @@ Schema with title
   "properties": {
     "foo": { "type": "string" } // [tl! highlight]
   }
+}
+```
+
+JSON without title
+
+```json
+{
+  "foo": 42
+}
+```
+
+JSON with title
+
+```json "Foo 42"
+{
+  "foo": 42
+}
+```
+
+No language without title
+
+```
+application/schema+json
+```
+
+No language with title
+
+``` "A title with unknown language"
+application/schema+json
+```
+
+Unsupported language without title
+
+```JavaScript
+const foo = function () => {
+  console.log("foo");
+}
+```
+
+Unsupported language with title
+
+```JavaScript "JavaScript with a title"
+const foo = function () => {
+  console.log("foo");
 }
 ```
 

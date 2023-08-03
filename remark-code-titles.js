@@ -6,20 +6,25 @@ const titlePattern = /^"(?<title>.*?)"/;
 
 const remarkNumberHeadings = () => (tree) => {
   visit(tree, "code", (codeNode, index, parent) => {
+    // Support title without a language
+    if (codeNode.lang && codeNode.lang[0] === "\"") {
+      codeNode.meta = `${codeNode.lang} ${codeNode.meta}`;
+      codeNode.lang = null;
+    }
+
     let title = "";
     const titleClasses = ["remark-code-title"];
 
-    if (typeof codeNode.lang === "string") {
-      titleClasses.push(`code-title-${codeNode.lang}`);
-
-      if (codeNode.lang.toLowerCase() === "jsonschema") {
-        codeNode.lang = "json";
-        title = "JSON Schema";
-      } else if (codeNode.lang.toLowerCase() === "json") {
-        title = "JSON";
-      } else {
-        title = codeNode.lang;
-      }
+    const language = codeNode.lang ?? "";
+    if (language.toLowerCase() === "jsonschema") {
+      codeNode.lang = "json";
+      title = "JSON Schema";
+      titleClasses.push("code-title-jsonschema");
+    } else if (language.toLowerCase() === "json") {
+      title = "JSON";
+      titleClasses.push("code-title-json");
+    } else {
+      titleClasses.push("code-title-unknown");
     }
 
     if ("meta" in codeNode) {
@@ -30,14 +35,14 @@ const remarkNumberHeadings = () => (tree) => {
       }
     }
 
-    const wrappedChildren = [];
-    if (codeNode.lang || title) {
+    const containerChildren = [];
+    if (title) {
       const titleNode = div([text(title)], { className: titleClasses });
-      wrappedChildren.push(titleNode);
+      containerChildren.push(titleNode);
     }
-    wrappedChildren.push(codeNode);
+    containerChildren.push(codeNode);
 
-    const wrappedCodeNode = div(wrappedChildren, { className: ["remark-code-container"] });
+    const wrappedCodeNode = div(containerChildren, { className: ["remark-code-container"] });
 
     parent.children.splice(index, 1, wrappedCodeNode);
   });
